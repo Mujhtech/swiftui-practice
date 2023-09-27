@@ -73,7 +73,7 @@ struct MainWeatherView: View {
                 .frame(width: 180, height: 180)
         
             
-            Text("\(imageName)°")
+            Text("\(temperature)°")
                 .font(.system(size: 70, weight: .medium))
                 .foregroundStyle(.white)
                 
