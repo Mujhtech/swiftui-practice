@@ -15,7 +15,9 @@ struct ContentView: View {
     
     
     @State private var isShowingItemSheet = false
-    @Query(sort: \Expense.date) var expenses: [Expense]
+    @Query(filter: #Predicate<Expense> { $0.amount > 1000 }, sort: \Expense.date) var expenses: [Expense]
+    
+    @State private var expenseToEdit: Expense?
     
     
     
@@ -26,6 +28,9 @@ struct ContentView: View {
                 
                 ForEach(expenses) { expense in
                     ExpenseCell(expense: expense)
+                        .onTapGesture {
+                            expenseToEdit = expense
+                        }
                 }
                 .onDelete{ indexSet in
                     for index in indexSet {
@@ -39,6 +44,11 @@ struct ContentView: View {
             .navigationTitle("Expenses")
             .sheet(isPresented: $isShowingItemSheet){
                 AddExpenseSheet()
+            }
+            .sheet(item: $expenseToEdit) { expense in
+                
+                UpdateExpenseSheet(expense: expense)
+        
             }
             .toolbar{
                 if !expenses.isEmpty {

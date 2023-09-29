@@ -14,6 +14,7 @@
 		A82C9CB02AC70FF7007C67F9 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C9CAF2AC70FF7007C67F9 /* Expense.swift */; };
 		A82C9CB22AC716B4007C67F9 /* AddExpenseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C9CB12AC716B4007C67F9 /* AddExpenseSheet.swift */; };
 		A82C9CB42AC7184F007C67F9 /* ExpenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C9CB32AC7184F007C67F9 /* ExpenseCell.swift */; };
+		A82C9CB62AC71BAF007C67F9 /* UpdateExpenseSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82C9CB52AC71BAF007C67F9 /* UpdateExpenseSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A82C9CAF2AC70FF7007C67F9 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		A82C9CB12AC716B4007C67F9 /* AddExpenseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseSheet.swift; sourceTree = "<group>"; };
 		A82C9CB32AC7184F007C67F9 /* ExpenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseCell.swift; sourceTree = "<group>"; };
+		A82C9CB52AC71BAF007C67F9 /* UpdateExpenseSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateExpenseSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				A82C9CA32AC70F8B007C67F9 /* ContentView.swift */,
 				A82C9CB32AC7184F007C67F9 /* ExpenseCell.swift */,
 				A82C9CB12AC716B4007C67F9 /* AddExpenseSheet.swift */,
+				A82C9CB52AC71BAF007C67F9 /* UpdateExpenseSheet.swift */,
 				A82C9CAF2AC70FF7007C67F9 /* Expense.swift */,
 				A82C9CA52AC70F8C007C67F9 /* Assets.xcassets */,
 				A82C9CA72AC70F8C007C67F9 /* Preview Content */,
@@ -149,6 +152,7 @@
 				A82C9CB02AC70FF7007C67F9 /* Expense.swift in Sources */,
 				A82C9CA42AC70F8B007C67F9 /* ContentView.swift in Sources */,
 				A82C9CB42AC7184F007C67F9 /* ExpenseCell.swift in Sources */,
+				A82C9CB62AC71BAF007C67F9 /* UpdateExpenseSheet.swift in Sources */,
 				A82C9CB22AC716B4007C67F9 /* AddExpenseSheet.swift in Sources */,
 				A82C9CA22AC70F8B007C67F9 /* basicExpenseWithSwiftDataApp.swift in Sources */,
 			);
