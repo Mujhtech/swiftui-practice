@@ -16,6 +16,10 @@
 		A80FEBCC2ACAC16500C48A92 /* HabitCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBCB2ACAC16500C48A92 /* HabitCellView.swift */; };
 		A80FEBD02ACAD00D00C48A92 /* AddHabitScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBCF2ACAD00D00C48A92 /* AddHabitScreen.swift */; };
 		A80FEBD22ACADD9500C48A92 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBD12ACADD9500C48A92 /* Theme.swift */; };
+		A80FEBD72ACAE5B900C48A92 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBD62ACAE5B900C48A92 /* HabitModel.swift */; };
+		A80FEBDA2ACAE6C000C48A92 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = A80FEBD92ACAE6C000C48A92 /* Appwrite */; };
+		A80FEBDE2ACAEB0200C48A92 /* AppwriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */; };
+		A84ABC312ACB60CB0005A873 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABC302ACB60CB0005A873 /* Database.swift */; };
 		A8743FA72AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8743FA62AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift */; };
 		A8743FA92AC8837F0084FFDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8743FA82AC8837F0084FFDF /* ContentView.swift */; };
 		A8743FAB2AC883800084FFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8743FAA2AC883800084FFDF /* Assets.xcassets */; };
@@ -32,6 +36,10 @@
 		A80FEBCB2ACAC16500C48A92 /* HabitCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCellView.swift; sourceTree = "<group>"; };
 		A80FEBCF2ACAD00D00C48A92 /* AddHabitScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitScreen.swift; sourceTree = "<group>"; };
 		A80FEBD12ACADD9500C48A92 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A80FEBD62ACAE5B900C48A92 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
+		A80FEBDB2ACAE72D00C48A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppwriteService.swift; sourceTree = "<group>"; };
+		A84ABC302ACB60CB0005A873 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A8743FA32AC8837F0084FFDF /* appwrite-hacktoberfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "appwrite-hacktoberfest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8743FA62AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appwrite_hacktoberfestApp.swift; sourceTree = "<group>"; };
 		A8743FA82AC8837F0084FFDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80FEBDA2ACAE6C000C48A92 /* Appwrite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,8 +122,35 @@
 		A80FEBD32ACAE32300C48A92 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A84ABC2F2ACB60B80005A873 /* Constant */,
+				A80FEBDC2ACAEAEF00C48A92 /* Services */,
+				A80FEBD42ACAE59B00C48A92 /* Models */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		A80FEBD42ACAE59B00C48A92 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A80FEBD62ACAE5B900C48A92 /* HabitModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A80FEBDC2ACAEAEF00C48A92 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		A84ABC2F2ACB60B80005A873 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				A84ABC302ACB60CB0005A873 /* Database.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		A8743F9A2AC8837F0084FFDF = {
@@ -136,6 +172,7 @@
 		A8743FA52AC8837F0084FFDF /* appwrite-hacktoberfest */ = {
 			isa = PBXGroup;
 			children = (
+				A80FEBDB2ACAE72D00C48A92 /* Info.plist */,
 				A80FEBD32ACAE32300C48A92 /* Shared */,
 				A80FEBCD2ACACFEA00C48A92 /* Habit */,
 				A80FEBC42ACABA7600C48A92 /* Auth */,
@@ -174,6 +211,9 @@
 			dependencies = (
 			);
 			name = "appwrite-hacktoberfest";
+			packageProductDependencies = (
+				A80FEBD92ACAE6C000C48A92 /* Appwrite */,
+			);
 			productName = "appwrite-hacktoberfest";
 			productReference = A8743FA32AC8837F0084FFDF /* appwrite-hacktoberfest.app */;
 			productType = "com.apple.product-type.application";
@@ -202,6 +242,9 @@
 				Base,
 			);
 			mainGroup = A8743F9A2AC8837F0084FFDF;
+			packageReferences = (
+				A80FEBD82ACAE6C000C48A92 /* XCRemoteSwiftPackageReference "sdk-for-apple" */,
+			);
 			productRefGroup = A8743FA42AC8837F0084FFDF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80FEBD72ACAE5B900C48A92 /* HabitModel.swift in Sources */,
 				A80FEBCC2ACAC16500C48A92 /* HabitCellView.swift in Sources */,
 				A80FEBC72ACABA9400C48A92 /* AuthScreen.swift in Sources */,
 				A80FEBC32ACAB9F200C48A92 /* SettingScreen.swift in Sources */,
@@ -236,8 +280,10 @@
 				A80FEBBF2ACAB79500C48A92 /* HomeScreen.swift in Sources */,
 				A8743FA92AC8837F0084FFDF /* ContentView.swift in Sources */,
 				A80FEBBB2ACAB61000C48A92 /* Router.swift in Sources */,
+				A80FEBDE2ACAEB0200C48A92 /* AppwriteService.swift in Sources */,
 				A80FEBCA2ACABEAA00C48A92 /* DateFilterView.swift in Sources */,
 				A80FEBD02ACAD00D00C48A92 /* AddHabitScreen.swift in Sources */,
+				A84ABC312ACB60CB0005A873 /* Database.swift in Sources */,
 				A8743FA72AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +420,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"appwrite-hacktoberfest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "appwrite-hacktoberfest/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -402,6 +449,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"appwrite-hacktoberfest/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "appwrite-hacktoberfest/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -442,6 +490,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A80FEBD82ACAE6C000C48A92 /* XCRemoteSwiftPackageReference "sdk-for-apple" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/appwrite/sdk-for-apple";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A80FEBD92ACAE6C000C48A92 /* Appwrite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A80FEBD82ACAE6C000C48A92 /* XCRemoteSwiftPackageReference "sdk-for-apple" */;
+			productName = Appwrite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A8743F9B2AC8837F0084FFDF /* Project object */;
 }

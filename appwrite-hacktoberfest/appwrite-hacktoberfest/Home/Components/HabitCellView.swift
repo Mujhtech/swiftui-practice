@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct HabitCellView: View {
+    
+    @Environment(\.colorScheme) private var theme
+    
+    
+    
+    
     var body: some View {
         ZStack(alignment: .leading) {
             
@@ -46,7 +52,7 @@ struct HabitCellView: View {
             .padding(EdgeInsets(top: 6, leading: 20, bottom: 6, trailing: 20))
             
         }
-        .background(.white)
+        .background(theme == .dark ? .white.opacity(0.2) : .white)
         .clipShape(RoundedRectangle(cornerRadius: 10))
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 4, y: 4)
 

@@ -21,13 +21,14 @@ struct HomeScreen: View {
                 .padding()
             }
             
-            HStack(alignment: .bottom) {
+            HStack(alignment: .top) {
                 
                 Text("Ongoing")
-                    .multilineTextAlignment(.trailing)
                     .font(.system(size: 14))
-                
+                Spacer()
             }
+            .padding(.leading, 20)
+            .padding(.trailing, 20)
             
             
             ForEach(1..<21, id: \.self) { index in
