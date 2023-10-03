@@ -13,6 +13,7 @@ enum Tabs {
 }
 
 enum Route {
+    case appwrite
     case home
     case auth
     case add_habit
@@ -21,8 +22,10 @@ enum Route {
 extension Route: View {
     var body: some View {
         switch self {
+        case .appwrite:
+             ContentView()
         case .home:
-            ContentView()
+            HomeView()
         case .auth:
             AuthScreen()
         case .add_habit:
@@ -40,6 +43,8 @@ extension Route: Hashable {
     
     var compareString: String {
         switch self {
+        case .appwrite:
+            return "appwrite"
         case .home:
             return "home"
         case .auth:
@@ -69,6 +74,16 @@ final class Router: ObservableObject {
     
     func pop() {
         routes.removeLast()
+    }
+    
+    func pushAndPopUntil(_ screen: Route, predicate: (Route) -> Bool) {
+        
+//        // Push
+//        push(screen)
+//        
+//        // Pop
+//        popUntil(predicate: predicate)
+        routes = [screen]
     }
     
     func popUntil(predicate: (Route) -> Bool) {

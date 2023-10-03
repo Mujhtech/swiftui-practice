@@ -10,72 +10,35 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject private var router: Router
+    @EnvironmentObject private var userViewModel: UserViewModel
+    @EnvironmentObject private var snackBarService: SnackBarService
+    @Environment(\.colorScheme) private var theme
     
     
     var body: some View {
         NavigationStack(path: $router.routes) {
-            TabView(selection: $router.selectedTab) {
+            VStack {
                 
-                HomeScreen()
-                    .onTapGesture { router.selectedTab = .home }
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                    .tag(Tabs.home)
-                ProgressScreen()
-                    .onTapGesture { router.selectedTab = .progress }
-                    .tabItem {
-                        Label("Progress", systemImage: "chart.bar.xaxis")
-                    }
-                    .tag(Tabs.progress)
-                SettingScreen()
-                    .onTapGesture { router.selectedTab = .setting }
-                    .tabItem {
-                        Label("Setting", systemImage: "gearshape")
-                    }
-                    .tag(Tabs.setting)
-                
+                Image(theme == .dark ? "appwrite_light" : "appwrite_dark")
+                    .frame(width: 132, height: 24)
                 
             }
-            .toolbar {
-                switch router.selectedTab {
-                case .home:
-                    ToolbarItem(placement: .topBarLeading) {
-                        VStack(alignment: .leading){
-                            Text("Today")
-                                .font(.title3)
-                                .fontWeight(.bold)
-                            Text("October 2")
-                                .font(.caption)
-                                .fontWeight(.medium)
-                        }
-                        
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        Button {
-                            router.push(.add_habit)
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                    }
-                case .progress:
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("Progress")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                    }
-                case .setting:
-                    
-                    ToolbarItem(placement: .topBarLeading) {
-                        Text("Setting")
-                            .font(.title3)
-                            .fontWeight(.bold)
-                    }
-                    
+            .task {
+                let isAuthenticated = await userViewModel.getCurrentSession()
+                
+                if !isAuthenticated {
+                    router.pushAndPopUntil(.auth, predicate: { $0 == .auth})
+                } else {
+                    router.pushAndPopUntil(.home, predicate: { $0 == .home})
                 }
             }
             .navigationDestination(for: Route.self, destination: { $0 })
             
+        }
+        .overlay(alignment: .top) {
+            if (snackBarService.snackBarState?.hasError == true) {
+                SnackbarView(text: snackBarService.snackBarState?.error.localizedDescription ?? "An error occured")
+            }
         }
         
     }

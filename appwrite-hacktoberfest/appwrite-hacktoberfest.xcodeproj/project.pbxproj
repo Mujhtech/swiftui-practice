@@ -19,6 +19,11 @@
 		A80FEBD72ACAE5B900C48A92 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBD62ACAE5B900C48A92 /* HabitModel.swift */; };
 		A80FEBDA2ACAE6C000C48A92 /* Appwrite in Frameworks */ = {isa = PBXBuildFile; productRef = A80FEBD92ACAE6C000C48A92 /* Appwrite */; };
 		A80FEBDE2ACAEB0200C48A92 /* AppwriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */; };
+		A81DF6312ACC996300729D2A /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DF6302ACC996300729D2A /* UserViewModel.swift */; };
+		A81DF6332ACC997000729D2A /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DF6322ACC997000729D2A /* HabitViewModel.swift */; };
+		A81DF6352ACCA5E800729D2A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DF6342ACCA5E800729D2A /* HomeView.swift */; };
+		A81DF6392ACCB66C00729D2A /* SnackbarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DF6382ACCB66C00729D2A /* SnackbarService.swift */; };
+		A81DF63C2ACCB74300729D2A /* SnackbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81DF63B2ACCB74300729D2A /* SnackbarView.swift */; };
 		A84ABC312ACB60CB0005A873 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = A84ABC302ACB60CB0005A873 /* Database.swift */; };
 		A8743FA72AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8743FA62AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift */; };
 		A8743FA92AC8837F0084FFDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8743FA82AC8837F0084FFDF /* ContentView.swift */; };
@@ -39,6 +44,11 @@
 		A80FEBD62ACAE5B900C48A92 /* HabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitModel.swift; sourceTree = "<group>"; };
 		A80FEBDB2ACAE72D00C48A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppwriteService.swift; sourceTree = "<group>"; };
+		A81DF6302ACC996300729D2A /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		A81DF6322ACC997000729D2A /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
+		A81DF6342ACCA5E800729D2A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		A81DF6382ACCB66C00729D2A /* SnackbarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarService.swift; sourceTree = "<group>"; };
+		A81DF63B2ACCB74300729D2A /* SnackbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarView.swift; sourceTree = "<group>"; };
 		A84ABC302ACB60CB0005A873 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		A8743FA32AC8837F0084FFDF /* appwrite-hacktoberfest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "appwrite-hacktoberfest.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8743FA62AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appwrite_hacktoberfestApp.swift; sourceTree = "<group>"; };
@@ -62,6 +72,7 @@
 		A80FEBBC2ACAB76A00C48A92 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A81DF62F2ACC994700729D2A /* ViewModels */,
 				A80FEBC82ACABE8000C48A92 /* Components */,
 				A80FEBBD2ACAB77C00C48A92 /* View */,
 			);
@@ -74,6 +85,7 @@
 				A80FEBBE2ACAB79500C48A92 /* HomeScreen.swift */,
 				A80FEBC02ACAB9E700C48A92 /* ProgressScreen.swift */,
 				A80FEBC22ACAB9F200C48A92 /* SettingScreen.swift */,
+				A81DF6342ACCA5E800729D2A /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -122,6 +134,7 @@
 		A80FEBD32ACAE32300C48A92 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				A81DF63A2ACCB73100729D2A /* Views */,
 				A84ABC2F2ACB60B80005A873 /* Constant */,
 				A80FEBDC2ACAEAEF00C48A92 /* Services */,
 				A80FEBD42ACAE59B00C48A92 /* Models */,
@@ -141,8 +154,26 @@
 			isa = PBXGroup;
 			children = (
 				A80FEBDD2ACAEB0200C48A92 /* AppwriteService.swift */,
+				A81DF6382ACCB66C00729D2A /* SnackbarService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		A81DF62F2ACC994700729D2A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A81DF6302ACC996300729D2A /* UserViewModel.swift */,
+				A81DF6322ACC997000729D2A /* HabitViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A81DF63A2ACCB73100729D2A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A81DF63B2ACCB74300729D2A /* SnackbarView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A84ABC2F2ACB60B80005A873 /* Constant */ = {
@@ -273,8 +304,11 @@
 			files = (
 				A80FEBD72ACAE5B900C48A92 /* HabitModel.swift in Sources */,
 				A80FEBCC2ACAC16500C48A92 /* HabitCellView.swift in Sources */,
+				A81DF6392ACCB66C00729D2A /* SnackbarService.swift in Sources */,
 				A80FEBC72ACABA9400C48A92 /* AuthScreen.swift in Sources */,
+				A81DF6332ACC997000729D2A /* HabitViewModel.swift in Sources */,
 				A80FEBC32ACAB9F200C48A92 /* SettingScreen.swift in Sources */,
+				A81DF6352ACCA5E800729D2A /* HomeView.swift in Sources */,
 				A80FEBC12ACAB9E700C48A92 /* ProgressScreen.swift in Sources */,
 				A80FEBD22ACADD9500C48A92 /* Theme.swift in Sources */,
 				A80FEBBF2ACAB79500C48A92 /* HomeScreen.swift in Sources */,
@@ -282,8 +316,10 @@
 				A80FEBBB2ACAB61000C48A92 /* Router.swift in Sources */,
 				A80FEBDE2ACAEB0200C48A92 /* AppwriteService.swift in Sources */,
 				A80FEBCA2ACABEAA00C48A92 /* DateFilterView.swift in Sources */,
+				A81DF63C2ACCB74300729D2A /* SnackbarView.swift in Sources */,
 				A80FEBD02ACAD00D00C48A92 /* AddHabitScreen.swift in Sources */,
 				A84ABC312ACB60CB0005A873 /* Database.swift in Sources */,
+				A81DF6312ACC996300729D2A /* UserViewModel.swift in Sources */,
 				A8743FA72AC8837F0084FFDF /* appwrite_hacktoberfestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

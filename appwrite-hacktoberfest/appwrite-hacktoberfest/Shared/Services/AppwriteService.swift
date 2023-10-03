@@ -22,6 +22,11 @@ class AppwriteService {
         self.database = Databases(client)
     }
     
+    
+    public func currentSession() async throws -> User<[String: AnyCodable]> {
+        try await account.get()
+    }
+    
     public func onRegister(
         _ email: String,
         _ password: String
@@ -46,6 +51,41 @@ class AppwriteService {
     public func onLogout() async throws {
         _ = try await account.deleteSession(
             sessionId: "current"
+        )
+    }
+    
+    public func getDocs(_ db: Database, _ collection: DatabaseCollections, data: Any) async throws {
+        _ = try await database.listDocuments(
+            databaseId: db.rawValue,
+            collectionId: collection.rawValue
+        )
+    }
+    
+    public func insertDoc(_ db: Database, _ collection: DatabaseCollections, data: Any) async throws {
+        _ = try await database.createDocument(
+            databaseId: db.rawValue,
+            collectionId: collection.rawValue,
+            documentId: ID.unique(),
+            data: data
+        )
+    }
+    
+    
+    public func updateDoc(_ db: Database, _ collection: DatabaseCollections, _ id: String, data: Any) async throws {
+        _ = try await database.updateDocument(
+            databaseId: db.rawValue,
+            collectionId: collection.rawValue,
+            documentId: id,
+            data: data
+        )
+    }
+    
+    
+    public func removeDoc(_ db: Database, _ collection: DatabaseCollections, _ id: String, data: Any) async throws {
+        _ = try await database.deleteDocument(
+            databaseId: db.rawValue,
+            collectionId: collection.rawValue,
+            documentId: id
         )
     }
     
