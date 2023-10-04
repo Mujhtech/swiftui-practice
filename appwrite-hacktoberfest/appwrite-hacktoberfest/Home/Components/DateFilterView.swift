@@ -8,22 +8,30 @@
 import SwiftUI
 
 struct DateFilterView: View {
+    var month: String
+    var day: Int
+    @Binding var selectedDay: Int?
+    
+    
     var body: some View {
-        Button {} label: {
+        Button {
+            selectedDay = day
+        } label: {
             VStack(spacing: 4) {
-                Text("Oct")
+                Text(month)
                     .font(.system(size: 14))
-                Text("4")
+                Text("\(day)")
                     .font(.system(size: 12))
                 
             }
         }
         .frame(width: 50, height: 50)
-        .background(Theme.blueLight)
+        .background(selectedDay == day ? Theme.blue : Theme.blueLight)
         .clipShape(RoundedRectangle(cornerRadius: 10))
+        .foregroundColor(selectedDay == day ? .white : Theme.blue)
     }
 }
 
-#Preview {
-    DateFilterView()
-}
+//#Preview {
+//    DateFilterView()
+//}

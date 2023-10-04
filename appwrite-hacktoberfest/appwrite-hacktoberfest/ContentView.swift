@@ -24,12 +24,13 @@ struct ContentView: View {
                 
             }
             .task {
+                
                 let isAuthenticated = await userViewModel.getCurrentSession()
                 
                 if !isAuthenticated {
-                    router.pushAndPopUntil(.auth, predicate: { $0 == .auth})
+                    router.pushReplacement(.auth)
                 } else {
-                    router.pushAndPopUntil(.home, predicate: { $0 == .home})
+                    router.pushReplacement(.home)
                 }
             }
             .navigationDestination(for: Route.self, destination: { $0 })

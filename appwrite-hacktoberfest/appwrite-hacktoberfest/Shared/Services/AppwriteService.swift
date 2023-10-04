@@ -54,10 +54,12 @@ class AppwriteService {
         )
     }
     
-    public func getDocs(_ db: Database, _ collection: DatabaseCollections, data: Any) async throws {
-        _ = try await database.listDocuments(
+    public func getDocs<T>(_ db: Database, _ collection: DatabaseCollections, queries: [String]? = nil) async throws -> DocumentList<T> {
+        try await database.listDocuments<T>(
             databaseId: db.rawValue,
-            collectionId: collection.rawValue
+            collectionId: collection.rawValue,
+            queries: queries,
+            nestedType: T.self
         )
     }
     

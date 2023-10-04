@@ -11,6 +11,19 @@ struct HomeView: View {
     
     @EnvironmentObject private var router: Router
     @EnvironmentObject private var userViewModel: UserViewModel
+    @EnvironmentObject private var habitViewModel: HabitViewModel
+    
+    var currentDate: Date {
+        return Date()
+    }
+        
+    var formattedDate: String {
+        let dateFormatter = DateFormatter()
+//        dateFormatter.dateStyle = .long
+//        dateFormatter.timeStyle = .none
+        dateFormatter.dateFormat = "MMMM d, yyyy"
+        return dateFormatter.string(from: currentDate)
+    }
     
     
     var body: some View {
@@ -45,7 +58,7 @@ struct HomeView: View {
                         Text("Today")
                             .font(.title3)
                             .fontWeight(.bold)
-                        Text("October 2")
+                        Text("\(formattedDate)")
                             .font(.caption)
                             .fontWeight(.medium)
                     }
@@ -73,6 +86,15 @@ struct HomeView: View {
                 }
                 
             }
+        }
+        .task {
+            await habitViewModel.fetchHabits()
+        }
+        .navigationBarBackButtonHidden(true)
+        .blur(radius: habitViewModel.selectedHabitState.isSelected ? 20 : 0)
+        
+        if habitViewModel.selectedHabitState.isSelected {
+            UpdateHabitView()
         }
     }
 }

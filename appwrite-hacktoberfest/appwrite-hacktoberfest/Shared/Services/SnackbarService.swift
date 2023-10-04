@@ -22,15 +22,12 @@ class SnackBarService: ObservableObject {
     
     @MainActor
     func displayError(_ error: Error) {
-        print("GOT HERE")
         snackBarState = nil
         snackBarState = SnackBarState(hasError: true, error: error)
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.0, execute: {
             withAnimation(.easeOut(duration: 0.3)) {
                 self.snackBarState = nil
             }
-            
-            print("GOT HERE TOO")
         })
     }
 }

@@ -37,12 +37,16 @@ final class UserViewModel: ObservableObject {
             
             let res = try await appwriteService.currentSession()
             
+            print(res)
+            
             userState.userId = res.id
             userState.isLogout = false
             
             return true
             
         } catch {
+            
+            print(error)
             userState.isLogout = true
             
             return false
@@ -52,9 +56,48 @@ final class UserViewModel: ObservableObject {
     
     
     @MainActor
-    func login(_ email String, _ password: String) async {
+    func login(_ email: String, _ password: String) async {
         
-        snackbarService.displayError(<#T##error: Error##Error#>)
+        do {
+           let session = try await appwriteService.onLogin(email, password)
+            
+           print(session)
+        } catch {
+            
+            snackbarService.displayError(error)
+            
+        }
+        
+    }
+    
+    
+    @MainActor
+    func register(_ email: String, _ password: String) async {
+        
+        do {
+           let session = try await appwriteService.onRegister(email, password)
+            
+           print(session)
+        } catch {
+            
+            snackbarService.displayError(error)
+            
+        }
+        
+    }
+    
+    
+    @MainActor
+    func logout() async {
+        
+        do {
+           _ = try await appwriteService.onLogout()
+        
+        } catch {
+            
+            snackbarService.displayError(error)
+            
+        }
         
     }
     
