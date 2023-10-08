@@ -60,15 +60,6 @@ struct HomeScreen: View {
                 
             }
             
-//            HStack(alignment: .top) {
-//                
-//                Text("Ongoing")
-//                    .font(.system(size: 14))
-//                Spacer()
-//            }
-//            .padding(.leading, 20)
-//            .padding(.trailing, 20)
-            
             
             ForEach(habitViewModel.habitState.habits) { habit in
                 HabitCellView(habit: habit)

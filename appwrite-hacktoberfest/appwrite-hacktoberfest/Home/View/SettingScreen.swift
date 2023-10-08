@@ -35,6 +35,12 @@ struct SettingScreen: View {
             
             Button("Delete Account") {
                 
+                Task {
+                    await userViewModel.deleteAccount()
+                    
+                    router.reset()
+                }
+                
             }
             .frame(width: 200, height: 50)
             .background(.red)

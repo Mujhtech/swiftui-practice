@@ -76,16 +76,6 @@ final class Router: ObservableObject {
         routes.removeLast()
     }
     
-    func pushAndPopUntil(_ screen: Route, predicate: (Route) -> Bool) {
-        
-//        // Push
-//        push(screen)
-//        
-//        // Pop
-//        popUntil(predicate: predicate)
-        routes = [screen]
-    }
-    
     func popUntil(predicate: (Route) -> Bool) {
         if let last = routes.popLast() {
             guard predicate(last) else {

@@ -54,6 +54,13 @@ class AppwriteService {
         )
     }
     
+    
+    public func onAccountDelete() async throws {
+        _ = try await account.deleteSession(
+            sessionId: "current"
+        )
+    }
+    
     public func getDocs<T>(_ db: Database, _ collection: DatabaseCollections, queries: [String]? = nil) async throws -> DocumentList<T> {
         try await database.listDocuments<T>(
             databaseId: db.rawValue,

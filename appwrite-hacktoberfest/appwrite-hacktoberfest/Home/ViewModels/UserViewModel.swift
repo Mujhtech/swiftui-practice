@@ -101,4 +101,19 @@ final class UserViewModel: ObservableObject {
         
     }
     
+    
+    @MainActor
+    func deleteAccount() async {
+        
+        do {
+            _ = try await appwriteService.onAccountDelete()
+        
+        } catch {
+            
+            snackbarService.displayError(error)
+            
+        }
+        
+    }
+    
 }
